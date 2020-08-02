@@ -3,3 +3,28 @@
 .mt2 {
   margin-top: 2rem;
 }
+
+.todo {
+  margin-bottom: 2rem;
+
+  &.completed {
+
+    span {
+      text-decoration: line-through;
+    }
+  }
+
+  label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1rem;
+    background: #f3f3f3;
+  }
+
+  i {
+    z-index: 2;
+  }
+}

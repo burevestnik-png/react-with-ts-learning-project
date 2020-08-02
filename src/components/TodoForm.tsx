@@ -25,23 +25,21 @@ const TodoForm: React.FC<TodoFormProps> = props => {
 
 
     return (
-        <div >
-            <div className="input-field mt2">
-                <input
-                    // value={title}
-                    type="text"
-                    id="title"
-                    ref={ ref }
-                    placeholder="Enter todo action"
-                    // onChange={changeHandler}
-                    onKeyPress={ keyPressHandler }
-                />
-                <label htmlFor="title"
-                       className="active"
-                >
-                    Enter todo action
-                </label >
-            </div >
+        <div className="input-field mt2">
+            <input
+                // value={title}
+                type="text"
+                id="title"
+                ref={ ref }
+                placeholder="Enter todo action"
+                // onChange={changeHandler}
+                onKeyPress={ keyPressHandler }
+            />
+            <label htmlFor="title"
+                   className="active"
+            >
+                Enter todo action
+            </label >
         </div >
     );
 };
