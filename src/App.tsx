@@ -29,7 +29,10 @@ const App: React.FC = () => {
     }
 
     const removeHandler = ( id: number ) => {
-        setTodos(prevState => prevState.filter(value => value.id !== id))
+        const shouldRemove = window.confirm('Do you really want to delete it?')
+        if (shouldRemove) {
+            setTodos(prevState => prevState.filter(value => value.id !== id));
+        }
     }
 
     return (

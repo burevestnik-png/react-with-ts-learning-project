@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, MouseEvent } from 'react';
 import { ITodo } from "../entities/ITodo";
 
 type TodoListProps = {
@@ -12,7 +12,13 @@ const TodoList: FunctionComponent<TodoListProps> = ( { todos, onRemove, onToggle
     if (todos.length === 0) {
         return <span className="center">No todos</span>
     }
-    
+
+    const removeHandler = ( event: MouseEvent, id: number ) => {
+        event.preventDefault();
+
+        onRemove(id);
+    };
+
     return (
         <ul>
             { todos.map(todo => {
@@ -31,7 +37,7 @@ const TodoList: FunctionComponent<TodoListProps> = ( { todos, onRemove, onToggle
                             />
                             <span>{ todo.title }</span>
                             <i className="material-icons red-text"
-                               onClick={ () => onRemove(todo.id) }
+                               onClick={ event => removeHandler(event, todo.id) }
                             >delete</i>
                         </label>
                     </li>
