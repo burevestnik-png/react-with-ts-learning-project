@@ -11,11 +11,11 @@ const App: React.FC = () =>
         <div className="container">
             <Switch>
                 <Route component={ TodosPage }
-                       path="/"
+                       path="/react-with-ts-learning-project/"
                        exact
                 />
                 <Route component={ AboutPage }
-                       path="/about"
+                       path="/react-with-ts-learning-project/about"
                 />
             </Switch>
         </div>
