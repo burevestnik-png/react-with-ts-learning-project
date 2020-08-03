@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -6,6 +6,15 @@ import { ITodo } from "./entities/ITodo";
 
 const App: React.FC = () => {
     const [ todos, setTodos ] = useState<ITodo[]>([]);
+
+    useEffect(() => {
+        const saved = JSON.parse(localStorage.getItem('todos') || '[]') as Array<ITodo>
+        setTodos(saved)
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
 
     const addHandler = ( title: string ) => {
         const newTodo: ITodo = {

@@ -10,7 +10,7 @@ type TodoListProps = {
 const TodoList: FunctionComponent<TodoListProps> = ( { todos, onRemove, onToggle } ) => {
 
     if (todos.length === 0) {
-        return <span className="center">No todos</span>
+        return <p className="center">No todos</p>
     }
 
     const removeHandler = ( event: MouseEvent, id: number ) => {
