@@ -1,4 +1,4 @@
-# React with TypeScript learning
+# React with TypeScript learning project
 
 > This is my first experience to make React app with TypeScript  
 
